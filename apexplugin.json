@@ -1,0 +1,47 @@
+{
+	"name": "apex-colorful-inline-popup",
+	"version": "0.2",
+	"description": "A dynamic action plugin to select a class for styling.",
+	"keywords": ["selectlist", "list of value", "popup"],
+	"homepage": "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup",
+	"bugs": {
+		"url": "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup/issues",
+		"email": "j.stark@buedingen-med.de"
+	},
+	"license": "MIT",
+	"commercial": "No",
+	"author": {
+		"name": "Julian Stark",
+		"email": "j.stark@buedingen-med.de",
+		"url": "https://github.com/julianstark999",
+		"twitter": "julianstark999"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup.git"
+	},
+	"oracle": {
+		"versions": [
+            "12.1.0.1",
+            "12.2.0.1",
+            "18.0.0.0",
+            "19.0.0.0",
+            "21.0.0.0"
+        ],
+		"apex": {
+			"versions": [
+                "19.2.0",
+                "20.1.0",
+                "20.2.0",
+                "21.1.0",
+                "21.2.0",
+                "22.1.0"
+            ],
+			"plugin": {
+				"internalName": "DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP",
+				"type": "dynamic action",
+                "previewImage" : "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup/blob/main/pretty-checkbox1.gif?raw=true'"
+			}
+		}
+	}
+}
