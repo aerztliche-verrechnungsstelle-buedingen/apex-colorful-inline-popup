@@ -28,7 +28,7 @@ prompt APPLICATION 501 - Plugin  - Colorful Inline Popup
 -- Application Export:
 --   Application:     501
 --   Name:            Plugin  - Colorful Inline Popup
---   Date and Time:   11:29 Tuesday November 8, 2022
+--   Date and Time:   11:41 Wednesday November 9, 2022
 --   Exported By:     JSTARK
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -60,6 +60,7 @@ wwv_flow_api.create_plugin(
 '  )',
 'return apex_plugin.t_dynamic_action_render_result',
 'as',
+'',
 '    l_result     apex_plugin.t_dynamic_action_render_result;',
 '',
 'begin',
@@ -74,25 +75,28 @@ wwv_flow_api.create_plugin(
 '    end if;',
 '    ',
 '    l_result.javascript_function := ''function() {''',
-'        ||''const waitForLoading = function(selector, callback) {if (selector.length === 0) {callback();} else {setTimeout(function() {waitForLoading(selector, callback);}, 250);}};''',
-'        ||''''',
 '        ||''const closestHtml = $(this.triggeringElement).closest("html");''',
-'        ||''const pageId = closestHtml.closest(''''[class^="page"]'''').attr("class").split(/\s+/).filter(x => x.startsWith("page-"))?.[0].replace("page-", "");''',
-'        ||''const popupSelector = `#PopupLov_${pageId}_${this.triggeringElement.id}_dlg`;''',
+'        ||''const pageId = closestHtml.closest(''''[class^="page"]'''').attr("class").split(/\s+/)?.filter(x => x.startsWith("page-"))?.[0]?.replace("page-", "");''',
+'        ||''const popupId = `#PopupLov_${pageId}_${this.triggeringElement.id}_dlg`;''',
+'        ||''const popupElement = $(top.parent.document).find(popupId);''',
+'        ||''''',
+'        ||''const waitForLoading = function(popupElement, callback) {if (popupElement.find("span.u-Processing").length === 0) {callback();} else {setTimeout(function() {waitForLoading(popupElement, callback);}, 250);}};''',
 '        ||''''',
 '        ||''function addValueAsClass() {''',
-'        ||''    waitForLoading($(top.parent.document).find(popupSelector).find("span.u-Processing"), function() {''',
-'        ||''        setTimeout(function() {''',
-'        ||''            $(top.parent.document).find(popupSelector).find("li.a-IconList-item").each(function () {''',
-'        ||''                const _this = $(this);''',
-'        ||''                _this.addClass(_this.data("id"));''',
-'        ||''            });''',
-'        ||''        }, 150);''',
-'        ||''    });''',
+'        ||''    setTimeout(function() {''',
+'        ||''        waitForLoading(popupElement, function() {''',
+'        ||''            setTimeout(function() {''',
+'        ||''                popupElement.find("li.a-IconList-item").each(function () {''',
+'        ||''                    const _this = $(this);''',
+'        ||''                    _this.addClass(_this.data("id"));''',
+'        ||''                });''',
+'        ||''            }, 50);''',
+'        ||''        });''',
+'        ||''    }, 150);''',
 '        ||''}''',
 '        ||''addValueAsClass();''',
 '        ||''''',
-'        ||''$(top.parent.document).find(popupSelector).find(".a-GV-loadMoreButton").click(() => addValueAsClass());''',
+'        ||''popupElement.find(".a-GV-loadMoreButton").click(() => addValueAsClass());''',
 '    ||''}'';',
 '',
 '    return l_result;',
@@ -115,7 +119,7 @@ wwv_flow_api.create_plugin(
 'Color 3 : u-color-3',
 '',
 'So each list item gets the corresponding class'))
-,p_version_identifier=>'0.1'
+,p_version_identifier=>'0.3'
 ,p_about_url=>'https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup'
 );
 end;
