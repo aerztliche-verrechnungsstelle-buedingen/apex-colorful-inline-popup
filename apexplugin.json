@@ -22,25 +22,25 @@
 	},
 	"oracle": {
 		"versions": [
-            "12.1.0.1",
-            "12.2.0.1",
-            "18.0.0.0",
-            "19.0.0.0",
-            "21.0.0.0"
-        ],
+			"12.1.0.1",
+			"12.2.0.1",
+			"18.0.0.0",
+			"19.0.0.0",
+			"21.0.0.0"
+		],
 		"apex": {
 			"versions": [
-                "19.2.0",
-                "20.1.0",
-                "20.2.0",
-                "21.1.0",
-                "21.2.0",
-                "22.1.0"
-            ],
+				"19.2.0",
+				"20.1.0",
+				"20.2.0",
+				"21.1.0",
+				"21.2.0",
+				"22.1.0"
+			],
 			"plugin": {
 				"internalName": "DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP",
 				"type": "dynamic action",
-                "previewImage" : "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup/blob/main/pretty-checkbox1.gif?raw=true'"
+				"previewImage" : "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup/blob/main/pretty-checkbox1.gif?raw=true'"
 			}
 		}
 	}

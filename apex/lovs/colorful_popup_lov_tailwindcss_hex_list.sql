@@ -1,0 +1,124 @@
+prompt --application/shared_components/user_interface/lovs/colorful_popup_lov_tailwindcss_hex_list
+begin
+--   Manifest
+--     COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>27635782693646703
+,p_default_application_id=>501
+,p_default_id_offset=>65309767924897831
+,p_default_owner=>'PROD'
+);
+wwv_flow_api.create_list_of_values(
+ p_id=>wwv_flow_api.id(66231287430334001)
+,p_lov_name=>'COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST'
+,p_lov_query=>'.'||wwv_flow_api.id(66231287430334001)||'.'
+,p_location=>'STATIC'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66231555381334001)
+,p_lov_disp_sequence=>1
+,p_lov_disp_value=>'Red'
+,p_lov_return_value=>'#ef4444'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66231998227334001)
+,p_lov_disp_sequence=>2
+,p_lov_disp_value=>'Orange'
+,p_lov_return_value=>'#f97316'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66232387446334001)
+,p_lov_disp_sequence=>3
+,p_lov_disp_value=>'Amber'
+,p_lov_return_value=>'#f59e0b'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66232753097334000)
+,p_lov_disp_sequence=>4
+,p_lov_disp_value=>'Yellow'
+,p_lov_return_value=>'#eab308'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66233122554334000)
+,p_lov_disp_sequence=>5
+,p_lov_disp_value=>'Lime'
+,p_lov_return_value=>'#84cc16'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66233520476334000)
+,p_lov_disp_sequence=>6
+,p_lov_disp_value=>'Green'
+,p_lov_return_value=>'#22c55e'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66233927543334000)
+,p_lov_disp_sequence=>7
+,p_lov_disp_value=>'Emerald'
+,p_lov_return_value=>'#10b981'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66234361922334000)
+,p_lov_disp_sequence=>8
+,p_lov_disp_value=>'Teal'
+,p_lov_return_value=>'#14b8a6'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66234739125334000)
+,p_lov_disp_sequence=>9
+,p_lov_disp_value=>'Cyan'
+,p_lov_return_value=>'#06b6d4'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66235197494333999)
+,p_lov_disp_sequence=>10
+,p_lov_disp_value=>'Sky'
+,p_lov_return_value=>'#0ea5e9'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66235584263333999)
+,p_lov_disp_sequence=>11
+,p_lov_disp_value=>'Blue'
+,p_lov_return_value=>'#3b82f6'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66235910669333999)
+,p_lov_disp_sequence=>12
+,p_lov_disp_value=>'Indigo'
+,p_lov_return_value=>'#6366f1'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66236337305333999)
+,p_lov_disp_sequence=>13
+,p_lov_disp_value=>'Violet'
+,p_lov_return_value=>'#8b5cf6'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66236762879333999)
+,p_lov_disp_sequence=>14
+,p_lov_disp_value=>'Purple'
+,p_lov_return_value=>'#a855f7'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66237185409333999)
+,p_lov_disp_sequence=>15
+,p_lov_disp_value=>'Fuchsia'
+,p_lov_return_value=>'#d946ef'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66237633989331846)
+,p_lov_disp_sequence=>16
+,p_lov_disp_value=>'Pink'
+,p_lov_return_value=>'#ec4899'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66237913664331845)
+,p_lov_disp_sequence=>17
+,p_lov_disp_value=>'Rose'
+,p_lov_return_value=>'#f43f5e'
+);
+wwv_flow_api.component_end;
+end;
+/

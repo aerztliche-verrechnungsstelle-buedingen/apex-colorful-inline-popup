@@ -1,7 +1,7 @@
-prompt --application/shared_components/user_interface/lovs/colorful_popup_lov_universal_theme_list
+prompt --application/shared_components/user_interface/lovs/colorful_popup_lov_universal_theme_class_list
 begin
 --   Manifest
---     COLORFUL_POPUP_LOV__UNIVERSAL_THEME_LIST
+--     COLORFUL_POPUP_LOV__UNIVERSAL_THEME_CLASS_LIST
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
@@ -13,7 +13,7 @@ wwv_flow_api.component_begin (
 );
 wwv_flow_api.create_list_of_values(
  p_id=>wwv_flow_api.id(65328375199630680)
-,p_lov_name=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_LIST'
+,p_lov_name=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_CLASS_LIST'
 ,p_lov_query=>'.'||wwv_flow_api.id(65328375199630680)||'.'
 ,p_location=>'STATIC'
 );

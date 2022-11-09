@@ -32,11 +32,11 @@ prompt APPLICATION 501 - Plugin  - Colorful Inline Popup
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                      4
---       Items:                    6
+--       Items:                   11
 --       Processes:                4
---       Regions:                  5
+--       Regions:                  6
 --       Buttons:                  2
---       Dynamic Actions:          3
+--       Dynamic Actions:          9
 --     Shared Components:
 --       Logic:
 --         Build Options:          1
@@ -58,7 +58,7 @@ prompt APPLICATION 501 - Plugin  - Colorful Inline Popup
 --           Breadcrumb:           1
 --           Button:               3
 --           Report:              12
---         LOVs:                   2
+--         LOVs:                   3
 --         Plug-ins:               1
 --       Globalization:
 --       Reports:
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 0.1'
+,p_flow_version=>'Release 0.3'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -117,7 +117,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Plugin  - Colorful Inline Popup'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221108115304'
+,p_last_upd_yyyymmddhh24miss=>'20221109123424'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>8
 ,p_ui_type_name => null
@@ -288,11 +288,123 @@ begin
 null;
 end;
 /
-prompt --application/shared_components/user_interface/lovs/colorful_popup_lov_universal_theme_list
+prompt --application/shared_components/user_interface/lovs/colorful_popup_lov_tailwindcss_hex_list
+begin
+wwv_flow_api.create_list_of_values(
+ p_id=>wwv_flow_api.id(66231287430334001)
+,p_lov_name=>'COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST'
+,p_lov_query=>'.'||wwv_flow_api.id(66231287430334001)||'.'
+,p_location=>'STATIC'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66231555381334001)
+,p_lov_disp_sequence=>1
+,p_lov_disp_value=>'Red'
+,p_lov_return_value=>'#ef4444'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66231998227334001)
+,p_lov_disp_sequence=>2
+,p_lov_disp_value=>'Orange'
+,p_lov_return_value=>'#f97316'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66232387446334001)
+,p_lov_disp_sequence=>3
+,p_lov_disp_value=>'Amber'
+,p_lov_return_value=>'#f59e0b'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66232753097334000)
+,p_lov_disp_sequence=>4
+,p_lov_disp_value=>'Yellow'
+,p_lov_return_value=>'#eab308'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66233122554334000)
+,p_lov_disp_sequence=>5
+,p_lov_disp_value=>'Lime'
+,p_lov_return_value=>'#84cc16'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66233520476334000)
+,p_lov_disp_sequence=>6
+,p_lov_disp_value=>'Green'
+,p_lov_return_value=>'#22c55e'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66233927543334000)
+,p_lov_disp_sequence=>7
+,p_lov_disp_value=>'Emerald'
+,p_lov_return_value=>'#10b981'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66234361922334000)
+,p_lov_disp_sequence=>8
+,p_lov_disp_value=>'Teal'
+,p_lov_return_value=>'#14b8a6'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66234739125334000)
+,p_lov_disp_sequence=>9
+,p_lov_disp_value=>'Cyan'
+,p_lov_return_value=>'#06b6d4'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66235197494333999)
+,p_lov_disp_sequence=>10
+,p_lov_disp_value=>'Sky'
+,p_lov_return_value=>'#0ea5e9'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66235584263333999)
+,p_lov_disp_sequence=>11
+,p_lov_disp_value=>'Blue'
+,p_lov_return_value=>'#3b82f6'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66235910669333999)
+,p_lov_disp_sequence=>12
+,p_lov_disp_value=>'Indigo'
+,p_lov_return_value=>'#6366f1'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66236337305333999)
+,p_lov_disp_sequence=>13
+,p_lov_disp_value=>'Violet'
+,p_lov_return_value=>'#8b5cf6'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66236762879333999)
+,p_lov_disp_sequence=>14
+,p_lov_disp_value=>'Purple'
+,p_lov_return_value=>'#a855f7'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66237185409333999)
+,p_lov_disp_sequence=>15
+,p_lov_disp_value=>'Fuchsia'
+,p_lov_return_value=>'#d946ef'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66237633989331846)
+,p_lov_disp_sequence=>16
+,p_lov_disp_value=>'Pink'
+,p_lov_return_value=>'#ec4899'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(66237913664331845)
+,p_lov_disp_sequence=>17
+,p_lov_disp_value=>'Rose'
+,p_lov_return_value=>'#f43f5e'
+);
+end;
+/
+prompt --application/shared_components/user_interface/lovs/colorful_popup_lov_universal_theme_class_list
 begin
 wwv_flow_api.create_list_of_values(
  p_id=>wwv_flow_api.id(65328375199630680)
-,p_lov_name=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_LIST'
+,p_lov_name=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_CLASS_LIST'
 ,p_lov_query=>'.'||wwv_flow_api.id(65328375199630680)||'.'
 ,p_location=>'STATIC'
 );
@@ -13617,7 +13729,11 @@ wwv_flow_api.create_plugin(
 '  )',
 'return apex_plugin.t_dynamic_action_render_result',
 'as',
+'',
 '    l_result     apex_plugin.t_dynamic_action_render_result;',
+'    ',
+'    --attributes',
+'    l_attribute01     p_dynamic_action.attribute_01%type := nvl(p_dynamic_action.attribute_01, ''class'');',
 '',
 'begin',
 '    ',
@@ -13631,25 +13747,32 @@ wwv_flow_api.create_plugin(
 '    end if;',
 '    ',
 '    l_result.javascript_function := ''function() {''',
-'        ||''const waitForLoading = function(selector, callback) {if (selector.length === 0) {callback();} else {setTimeout(function() {waitForLoading(selector, callback);}, 250);}};''',
-'        ||''''',
 '        ||''const closestHtml = $(this.triggeringElement).closest("html");''',
-'        ||''const pageId = closestHtml.closest(''''[class^="page"]'''').attr("class").split(/\s+/).filter(x => x.startsWith("page-"))?.[0].replace("page-", "");''',
-'        ||''const popupSelector = `#PopupLov_${pageId}_${this.triggeringElement.id}_dlg`;''',
+'        ||''const pageId = closestHtml.closest(''''[class^="page"]'''').attr("class").split(/\s+/)?.filter(x => x.startsWith("page-"))?.[0]?.replace("page-", "");''',
+'        ||''const popupId = `#PopupLov_${pageId}_${this.triggeringElement.id}_dlg`;''',
+'        ||''const popupElement = $(top.parent.document).find(popupId);''',
+'        ||''''',
+'        ||''const waitForLoading = function(popupElement, callback) {if (popupElement.find("span.u-Processing").length === 0) {callback();} else {setTimeout(function() {waitForLoading(popupElement, callback);}, 250);}};''',
 '        ||''''',
 '        ||''function addValueAsClass() {''',
-'        ||''    waitForLoading($(top.parent.document).find(popupSelector).find("span.u-Processing"), function() {''',
-'        ||''        setTimeout(function() {''',
-'        ||''            $(top.parent.document).find(popupSelector).find("li.a-IconList-item").each(function () {''',
-'        ||''                const _this = $(this);''',
-'        ||''                _this.addClass(_this.data("id"));''',
-'        ||''            });''',
-'        ||''        }, 150);''',
-'        ||''    });''',
+'        ||''    setTimeout(function() {''',
+'        ||''        waitForLoading(popupElement, function() {''',
+'        ||''            setTimeout(function() {''',
+'        ||''                popupElement.find("li.a-IconList-item").each(function () {''',
+'        ||''                    const _this = $(this);''',
+'        ||''                    if ("''||l_attribute01||''" === "class") {''',
+'        ||''                        _this.addClass(_this.data("id"));''',
+'        ||''                    } else {''',
+'        ||''                        _this.css("background-color", _this.data("id"));''',
+'        ||''                    }''',
+'        ||''                });''',
+'        ||''            }, 50);''',
+'        ||''        });''',
+'        ||''    }, 150);''',
 '        ||''}''',
 '        ||''addValueAsClass();''',
 '        ||''''',
-'        ||''$(top.parent.document).find(popupSelector).find(".a-GV-loadMoreButton").click(() => addValueAsClass());''',
+'        ||''popupElement.find(".a-GV-loadMoreButton").click(() => addValueAsClass());''',
 '    ||''}'';',
 '',
 '    return l_result;',
@@ -13660,20 +13783,57 @@ wwv_flow_api.create_plugin(
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'This Plugin can be used to style a Popup LOVs Inline Popup.',
-'It uses the ListOfValues "Return Value" and set it as the list entry class.',
-'',
-'For Example:',
-'A Popup LOV to select a class from Universal Theme (https://apex.oracle.com/pls/apex/r/apex_pm/ut/color-and-status-modifiers).',
-'Color 1, 2 and 3 should be selectable.',
+'This Plugin can be used to style a Popup LOVs Inline Popup.<br>',
+'It uses the ListOfValues "Return Value" and set it as the list entry class or background-color.<br>',
+'<br>',
+'<b>Example:</b><br>',
+'A Popup LOV to select a class from Universal Theme (https://apex.oracle.com/pls/apex/r/apex_pm/ut/color-and-status-modifiers).<br>',
+'Color 1, 2 and 3 should be selectable.<br>',
 'The ListOfValue for the item should be:',
-'Color 1 : u-color-1',
-'Color 2 : u-color-2',
-'Color 3 : u-color-3',
+'<ul>',
+'    <li>Color 1 : u-color-1</li>',
+'    <li>Color 2 : u-color-2</li>',
+'    <li>Color 3 : u-color-3</li>',
+'</ul>',
 '',
-'So each list item gets the corresponding class'))
-,p_version_identifier=>'0.1'
+'So each list item gets the corresponding style'))
+,p_version_identifier=>'0.3'
 ,p_about_url=>'https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup'
+);
+wwv_flow_api.create_plugin_attribute(
+ p_id=>wwv_flow_api.id(66226735932351072)
+,p_plugin_id=>wwv_flow_api.id(65418063809743154)
+,p_attribute_scope=>'COMPONENT'
+,p_attribute_sequence=>1
+,p_display_sequence=>10
+,p_prompt=>'Type'
+,p_attribute_type=>'SELECT LIST'
+,p_is_required=>true
+,p_default_value=>'class'
+,p_supported_ui_types=>'DESKTOP:JQM_SMARTPHONE'
+,p_is_translatable=>false
+,p_lov_type=>'STATIC'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Define the type of selectable items in the List of Values',
+'Possible options:  ',
+'<ul>',
+'    <li><code>class</code> - the LOV return value is a CSS class, which will be set to the list item</li>',
+'    <li><code>background-color</code> - the LOV return value is a HEX-Color Code, which will be set to the list item as background-color value</li>',
+'</ul>'))
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(66228631310350571)
+,p_plugin_attribute_id=>wwv_flow_api.id(66226735932351072)
+,p_display_sequence=>10
+,p_display_value=>'class'
+,p_return_value=>'class'
+);
+wwv_flow_api.create_plugin_attr_value(
+ p_id=>wwv_flow_api.id(66229043137349932)
+,p_plugin_attribute_id=>wwv_flow_api.id(66226735932351072)
+,p_display_sequence=>20
+,p_display_value=>'background-color'
+,p_return_value=>'background-color'
 );
 end;
 /
@@ -13735,11 +13895,11 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'Y'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221108115304'
+,p_last_upd_yyyymmddhh24miss=>'20221109123049'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(64086857829097325)
-,p_plug_name=>'LOV Static - Class'
+,p_plug_name=>'LOV Static'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(83338362712762369)
 ,p_plug_display_sequence=>10
@@ -13750,10 +13910,10 @@ wwv_flow_api.create_page_plug(
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(64087951122097336)
-,p_plug_name=>'MODAL'
+,p_plug_name=>'Modal'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(83338362712762369)
-,p_plug_display_sequence=>40
+,p_plug_display_sequence=>80
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
@@ -13761,10 +13921,10 @@ wwv_flow_api.create_page_plug(
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(195219711806382960)
-,p_plug_name=>'LOV Shared Component - Class'
+,p_plug_name=>'LOV Shared Component'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(83338362712762369)
-,p_plug_display_sequence=>30
+,p_plug_display_sequence=>50
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
@@ -13787,7 +13947,7 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P1_STATIC_LOV__CLASS'
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(64086857829097325)
-,p_prompt=>'Color'
+,p_prompt=>'Color - class'
 ,p_display_as=>'NATIVE_POPUP_LOV'
 ,p_lov=>'STATIC2:Info;u-info,Warning;u-warning,Danger;u-danger,Success;u-success,Color 1;u-color-1,Color 2;u-color-2,Color 3;u-color-3,Color 4;u-color-4,Color 5;u-color-5,Color 6;u-color-6,Color 7;u-color-7,Color 8;u-color-8,Color 9;u-color-9,Color 10;u-color'
 ||'-10'
@@ -13803,12 +13963,12 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(65316509031868823)
-,p_name=>'P1_SHARED_COMPONENT_LOV'
-,p_item_sequence=>20
+,p_name=>'P1_SHARED_COMPONENT_LOV__CLASS'
+,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(195219711806382960)
-,p_prompt=>'Color'
+,p_prompt=>'Color - class'
 ,p_display_as=>'NATIVE_POPUP_LOV'
-,p_named_lov=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_LIST'
+,p_named_lov=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_CLASS_LIST'
 ,p_lov=>'.'||wwv_flow_api.id(65328375199630680)||'.'
 ,p_cSize=>30
 ,p_field_template=>wwv_flow_api.id(83408111803762397)
@@ -13820,9 +13980,48 @@ wwv_flow_api.create_page_item(
 ,p_attribute_04=>'N'
 ,p_attribute_05=>'N'
 );
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(65925641234105008)
+,p_name=>'P1_STATIC_LOV__BACKGROUND_COLOR'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(64086857829097325)
+,p_prompt=>'Color - background-color'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_lov=>'STATIC2:Red;#ef4444,Orange;#f97316,Amber;#f59e0b,Yellow;#eab308,Lime;#84cc16,Green;#22c55e,Emerald;#10b981,Teal;#14b8a6,Cyan;#06b6d4,Sky;#0ea5e9,Blue;#3b82f6,Indigo;#6366f1,Violet;#8b5cf6,Purple;#a855f7,Fuchsia;#d946ef,Pink;#ec4899,Rose;#f43f5e'
+,p_cSize=>30
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_api.id(83408111803762397)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_03=>'N'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(65926091283105012)
+,p_name=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(195219711806382960)
+,p_prompt=>'Color - background-color'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_named_lov=>'COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST'
+,p_lov=>'.'||wwv_flow_api.id(66231287430334001)||'.'
+,p_cSize=>30
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_api.id(83408111803762397)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_03=>'N'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(60372882494876925)
-,p_name=>'P1_STATIC_LOV - Class - Initiialize Colorful Inline Popup'
+,p_name=>'P1_STATIC_LOV - Initiialize Colorful Inline Popup'
 ,p_event_sequence=>10
 ,p_triggering_element_type=>'ITEM'
 ,p_triggering_element=>'P1_STATIC_LOV__CLASS'
@@ -13838,13 +14037,14 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
 ,p_affected_elements=>'P1_STATIC_LOV__CLASS'
+,p_attribute_01=>'class'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(60372594537876922)
-,p_name=>'P1_SHARED_COMPONENT_LOV - Class - Initiialize Colorful Inline Popup'
+,p_name=>'P1_SHARED_COMPONENT_LOV__CLASS - Initiialize Colorful Inline Popup'
 ,p_event_sequence=>20
 ,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P1_SHARED_COMPONENT_LOV'
+,p_triggering_element=>'P1_SHARED_COMPONENT_LOV__CLASS'
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
@@ -13856,7 +14056,48 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P1_SHARED_COMPONENT_LOV'
+,p_affected_elements=>'P1_SHARED_COMPONENT_LOV__CLASS'
+,p_attribute_01=>'class'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(65925758885105009)
+,p_name=>'P1_STATIC_LOV__BACKGROUND_COLOR - Initiialize Colorful Inline Popup'
+,p_event_sequence=>30
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P1_STATIC_LOV__BACKGROUND_COLOR'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(65925879317105010)
+,p_event_id=>wwv_flow_api.id(65925758885105009)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P1_STATIC_LOV__BACKGROUND_COLOR'
+,p_attribute_01=>'background-color'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(65926133897105013)
+,p_name=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR - Initiialize Colorful Inline Popup'
+,p_event_sequence=>40
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(65926271569105014)
+,p_event_id=>wwv_flow_api.id(65926133897105013)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_attribute_01=>'background-color'
 );
 end;
 /
@@ -13874,29 +14115,98 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'Y'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221108115304'
+,p_last_upd_yyyymmddhh24miss=>'20221109123424'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(64088167453097338)
-,p_plug_name=>'MODAL'
+ p_id=>wwv_flow_api.id(130332807199406070)
+,p_plug_name=>'LOV Static'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(83338362712762369)
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(261466787456691113)
+,p_plug_name=>'LOV Shared Component'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(83338362712762369)
+,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(64088263910097339)
-,p_name=>'P2_COLOR'
+ p_id=>wwv_flow_api.id(66246216129308744)
+,p_name=>'P2_STATIC_LOV__CLASS'
 ,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_api.id(64088167453097338)
-,p_prompt=>'Color'
+,p_item_plug_id=>wwv_flow_api.id(130332807199406070)
+,p_prompt=>'Color - class'
 ,p_display_as=>'NATIVE_POPUP_LOV'
-,p_named_lov=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_LIST'
+,p_lov=>'STATIC2:Info;u-info,Warning;u-warning,Danger;u-danger,Success;u-success,Color 1;u-color-1,Color 2;u-color-2,Color 3;u-color-3,Color 4;u-color-4,Color 5;u-color-5,Color 6;u-color-6,Color 7;u-color-7,Color 8;u-color-8,Color 9;u-color-9,Color 10;u-color'
+||'-10'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(83408111803762397)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_03=>'N'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66246664150308744)
+,p_name=>'P2_STATIC_LOV__BACKGROUND_COLOR'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(130332807199406070)
+,p_prompt=>'Color - background-color'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_lov=>'STATIC2:Red;#ef4444,Orange;#f97316,Amber;#f59e0b,Yellow;#eab308,Lime;#84cc16,Green;#22c55e,Emerald;#10b981,Teal;#14b8a6,Cyan;#06b6d4,Sky;#0ea5e9,Blue;#3b82f6,Indigo;#6366f1,Violet;#8b5cf6,Purple;#a855f7,Fuchsia;#d946ef,Pink;#ec4899,Rose;#f43f5e'
+,p_cSize=>30
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_api.id(83408111803762397)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_03=>'N'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66247379795308152)
+,p_name=>'P2_SHARED_COMPONENT_LOV__CLASS'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(261466787456691113)
+,p_prompt=>'Color - class'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_named_lov=>'COLORFUL_POPUP_LOV__UNIVERSAL_THEME_CLASS_LIST'
 ,p_lov=>'.'||wwv_flow_api.id(65328375199630680)||'.'
 ,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(83408111803762397)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_03=>'N'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66247760242308152)
+,p_name=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(261466787456691113)
+,p_prompt=>'Color - background-color'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_named_lov=>'COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST'
+,p_lov=>'.'||wwv_flow_api.id(66231287430334001)||'.'
+,p_cSize=>30
+,p_begin_on_new_line=>'N'
 ,p_field_template=>wwv_flow_api.id(83408111803762397)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'NO'
@@ -13924,6 +14234,87 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
 ,p_affected_elements=>'P2_COLOR'
+,p_attribute_01=>'class'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(65926349548105015)
+,p_name=>'P2_STATIC_LOV__CLASS - Initialize Colorful Inline Popup'
+,p_event_sequence=>10
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P2_STATIC_LOV__CLASS'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(65926436589105016)
+,p_event_id=>wwv_flow_api.id(65926349548105015)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P2_STATIC_LOV__CLASS'
+,p_attribute_01=>'class'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(65926526953105017)
+,p_name=>'P2_STATIC_LOV__BACKGROUND_COLOR - Initialize Colorful Inline Popup'
+,p_event_sequence=>20
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P2_STATIC_LOV__BACKGROUND_COLOR'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(65926607105105018)
+,p_event_id=>wwv_flow_api.id(65926526953105017)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P2_STATIC_LOV__BACKGROUND_COLOR'
+,p_attribute_01=>'background-color'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(65926734135105019)
+,p_name=>'P2_SHARED_COMPONENT_LOV__CLASS - Initialize Colorful Inline Popup'
+,p_event_sequence=>30
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P2_SHARED_COMPONENT_LOV__CLASS'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(65926809683105020)
+,p_event_id=>wwv_flow_api.id(65926734135105019)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P2_STATIC_LOV__BACKGROUND_COLOR,P2_SHARED_COMPONENT_LOV__CLASS'
+,p_attribute_01=>'class'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(65926992630105021)
+,p_name=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR - Initialize Colorful Inline Popup'
+,p_event_sequence=>40
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(65927044620105022)
+,p_event_id=>wwv_flow_api.id(65926992630105021)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_attribute_01=>'background-color'
 );
 end;
 /
