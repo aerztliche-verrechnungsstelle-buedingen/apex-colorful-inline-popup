@@ -1,6 +1,6 @@
 # APEX - Colorful Inline Popup
 
-**Colorful Inline Popup** is a Plugin to select a Color class with Popup LOV.
+**Colorful Inline Popup** is a Plugin to select a color class or hex code with Popup LOV.
 
 ##### Table of Contents
 
@@ -27,4 +27,4 @@ The List of Values Source can be a Shared Component or a Static Value. With a Na
 
 ## License
 
-MIT
+[MIT](./LICENSE)
