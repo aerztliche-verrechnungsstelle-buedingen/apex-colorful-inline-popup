@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 0.3'
+,p_flow_version=>'Release 0.5'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -117,7 +117,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Plugin  - Colorful Inline Popup'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221109123424'
+,p_last_upd_yyyymmddhh24miss=>'20221109142051'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>8
 ,p_ui_type_name => null
@@ -13797,11 +13797,11 @@ wwv_flow_api.create_plugin(
 '</ul>',
 '',
 'So each list item gets the corresponding style'))
-,p_version_identifier=>'0.3'
+,p_version_identifier=>'0.5'
 ,p_about_url=>'https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(66226735932351072)
+ p_id=>wwv_flow_api.id(66278852913664504)
 ,p_plugin_id=>wwv_flow_api.id(65418063809743154)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
@@ -13810,30 +13810,29 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
 ,p_default_value=>'class'
-,p_supported_ui_types=>'DESKTOP:JQM_SMARTPHONE'
 ,p_is_translatable=>false
 ,p_lov_type=>'STATIC'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'Define the type of selectable items in the List of Values',
-'Possible options:  ',
+'Define the type of selectable items in the List of Values<br>',
+'Possible options:<br>',
 '<ul>',
 '    <li><code>class</code> - the LOV return value is a CSS class, which will be set to the list item</li>',
-'    <li><code>background-color</code> - the LOV return value is a HEX-Color Code, which will be set to the list item as background-color value</li>',
+'    <li><code>hex code</code> - the LOV return value is a HEX-Color Code, which will be set to the list item as background-color value</li>',
 '</ul>'))
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(66228631310350571)
-,p_plugin_attribute_id=>wwv_flow_api.id(66226735932351072)
+ p_id=>wwv_flow_api.id(66282796205664054)
+,p_plugin_attribute_id=>wwv_flow_api.id(66278852913664504)
 ,p_display_sequence=>10
 ,p_display_value=>'class'
 ,p_return_value=>'class'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(66229043137349932)
-,p_plugin_attribute_id=>wwv_flow_api.id(66226735932351072)
+ p_id=>wwv_flow_api.id(66283128695663396)
+,p_plugin_attribute_id=>wwv_flow_api.id(66278852913664504)
 ,p_display_sequence=>20
-,p_display_value=>'background-color'
-,p_return_value=>'background-color'
+,p_display_value=>'hex code'
+,p_return_value=>'hex-code'
 );
 end;
 /
@@ -13895,7 +13894,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'Y'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221109123049'
+,p_last_upd_yyyymmddhh24miss=>'20221109142042'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(64086857829097325)
@@ -13982,10 +13981,10 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(65925641234105008)
-,p_name=>'P1_STATIC_LOV__BACKGROUND_COLOR'
+,p_name=>'P1_STATIC_LOV__HEX_CODE'
 ,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(64086857829097325)
-,p_prompt=>'Color - background-color'
+,p_prompt=>'Color - hex code'
 ,p_display_as=>'NATIVE_POPUP_LOV'
 ,p_lov=>'STATIC2:Red;#ef4444,Orange;#f97316,Amber;#f59e0b,Yellow;#eab308,Lime;#84cc16,Green;#22c55e,Emerald;#10b981,Teal;#14b8a6,Cyan;#06b6d4,Sky;#0ea5e9,Blue;#3b82f6,Indigo;#6366f1,Violet;#8b5cf6,Purple;#a855f7,Fuchsia;#d946ef,Pink;#ec4899,Rose;#f43f5e'
 ,p_cSize=>30
@@ -14001,10 +14000,10 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(65926091283105012)
-,p_name=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_name=>'P1_SHARED_COMPONENT_LOV__HEX_CODE'
 ,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(195219711806382960)
-,p_prompt=>'Color - background-color'
+,p_prompt=>'Color - hex code'
 ,p_display_as=>'NATIVE_POPUP_LOV'
 ,p_named_lov=>'COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST'
 ,p_lov=>'.'||wwv_flow_api.id(66231287430334001)||'.'
@@ -14061,10 +14060,10 @@ wwv_flow_api.create_page_da_action(
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(65925758885105009)
-,p_name=>'P1_STATIC_LOV__BACKGROUND_COLOR - Initiialize Colorful Inline Popup'
+,p_name=>'P1_STATIC_LOV__HEX_CODE - Initiialize Colorful Inline Popup'
 ,p_event_sequence=>30
 ,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P1_STATIC_LOV__BACKGROUND_COLOR'
+,p_triggering_element=>'P1_STATIC_LOV__HEX_CODE'
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
@@ -14076,15 +14075,15 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P1_STATIC_LOV__BACKGROUND_COLOR'
-,p_attribute_01=>'background-color'
+,p_affected_elements=>'P1_STATIC_LOV__HEX_CODE'
+,p_attribute_01=>'hex-code'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(65926133897105013)
-,p_name=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR - Initiialize Colorful Inline Popup'
+,p_name=>'P1_SHARED_COMPONENT_LOV__HEX_CODE - Initiialize Colorful Inline Popup'
 ,p_event_sequence=>40
 ,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_triggering_element=>'P1_SHARED_COMPONENT_LOV__HEX_CODE'
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
@@ -14096,8 +14095,8 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P1_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
-,p_attribute_01=>'background-color'
+,p_affected_elements=>'P1_SHARED_COMPONENT_LOV__HEX_CODE'
+,p_attribute_01=>'hex-code'
 );
 end;
 /
@@ -14115,7 +14114,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'Y'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221109123424'
+,p_last_upd_yyyymmddhh24miss=>'20221109142051'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(130332807199406070)
@@ -14160,10 +14159,10 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(66246664150308744)
-,p_name=>'P2_STATIC_LOV__BACKGROUND_COLOR'
+,p_name=>'P2_STATIC_LOV__HEX_CODE'
 ,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(130332807199406070)
-,p_prompt=>'Color - background-color'
+,p_prompt=>'Color - hex code'
 ,p_display_as=>'NATIVE_POPUP_LOV'
 ,p_lov=>'STATIC2:Red;#ef4444,Orange;#f97316,Amber;#f59e0b,Yellow;#eab308,Lime;#84cc16,Green;#22c55e,Emerald;#10b981,Teal;#14b8a6,Cyan;#06b6d4,Sky;#0ea5e9,Blue;#3b82f6,Indigo;#6366f1,Violet;#8b5cf6,Purple;#a855f7,Fuchsia;#d946ef,Pink;#ec4899,Rose;#f43f5e'
 ,p_cSize=>30
@@ -14198,10 +14197,10 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(66247760242308152)
-,p_name=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_name=>'P2_SHARED_COMPONENT_LOV__HEX_CODE'
 ,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(261466787456691113)
-,p_prompt=>'Color - background-color'
+,p_prompt=>'Color - hex code'
 ,p_display_as=>'NATIVE_POPUP_LOV'
 ,p_named_lov=>'COLORFUL_POPUP_LOV__TAILWINDCSS_HEX_LIST'
 ,p_lov=>'.'||wwv_flow_api.id(66231287430334001)||'.'
@@ -14258,10 +14257,10 @@ wwv_flow_api.create_page_da_action(
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(65926526953105017)
-,p_name=>'P2_STATIC_LOV__BACKGROUND_COLOR - Initialize Colorful Inline Popup'
+,p_name=>'P2_STATIC_LOV__HEX_CODE - Initialize Colorful Inline Popup'
 ,p_event_sequence=>20
 ,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P2_STATIC_LOV__BACKGROUND_COLOR'
+,p_triggering_element=>'P2_STATIC_LOV__HEX_CODE'
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
@@ -14273,8 +14272,8 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P2_STATIC_LOV__BACKGROUND_COLOR'
-,p_attribute_01=>'background-color'
+,p_affected_elements=>'P2_STATIC_LOV__HEX_CODE'
+,p_attribute_01=>'hex-code'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(65926734135105019)
@@ -14293,15 +14292,15 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P2_STATIC_LOV__BACKGROUND_COLOR,P2_SHARED_COMPONENT_LOV__CLASS'
+,p_affected_elements=>'P2_STATIC_LOV__HEX_CODE,P2_SHARED_COMPONENT_LOV__CLASS'
 ,p_attribute_01=>'class'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(65926992630105021)
-,p_name=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR - Initialize Colorful Inline Popup'
+,p_name=>'P2_SHARED_COMPONENT_LOV__HEX_CODE - Initialize Colorful Inline Popup'
 ,p_event_sequence=>40
 ,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
+,p_triggering_element=>'P2_SHARED_COMPONENT_LOV__HEX_CODE'
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
@@ -14313,8 +14312,8 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'PLUGIN_DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P2_SHARED_COMPONENT_LOV__BACKGROUND_COLOR'
-,p_attribute_01=>'background-color'
+,p_affected_elements=>'P2_SHARED_COMPONENT_LOV__HEX_CODE'
+,p_attribute_01=>'hex-code'
 );
 end;
 /
