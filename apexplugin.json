@@ -40,7 +40,8 @@
 			"plugin": {
 				"internalName": "DE.VSBUEDINGEN.COLORFUL_INLINE_POPUP",
 				"type": "dynamic action",
-				"previewImage" : "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup/blob/main/pretty-checkbox1.gif?raw=true'"
+				"demo": "https://apex.oracle.com/pls/apex/r/aerztliche_verrechnungsstelle_buedingen_gmbh/plugin_colorful_inline_popup/demo",
+				"previewImage" : "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup/blob/main/assets/example.gif?raw=true'"
 			}
 		}
 	}
