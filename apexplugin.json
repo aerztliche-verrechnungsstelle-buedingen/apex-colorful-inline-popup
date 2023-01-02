@@ -1,6 +1,6 @@
 {
-	"name": "apex-colorful-inline-popup",
-	"version": "0.5",
+	"name": "Colorful Inline Popup",
+	"version": "0.6",
 	"description": "A dynamic action plugin to select a class for styling.",
 	"keywords": ["selectlist", "list of value", "popup"],
 	"homepage": "https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup",

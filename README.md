@@ -13,6 +13,8 @@
 
 ![Example](./assets/example.gif)
 
+[DEMO](https://apex.oracle.com/pls/apex/r/aerztliche_verrechnungsstelle_buedingen_gmbh/plugin_colorful_inline_popup/demo)
+
 ## How it works
 
 1. Create a Page Item with Type ``Popup LOV``. In ``Settings`` > ``Display As`` you should select ``Inline Popup``.
