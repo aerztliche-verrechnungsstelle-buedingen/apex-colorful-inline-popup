@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 0.5'
+,p_flow_version=>'Release 0.6'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -117,7 +117,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Plugin  - Colorful Inline Popup'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221109142051'
+,p_last_upd_yyyymmddhh24miss=>'20230102151703'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>8
 ,p_ui_type_name => null
@@ -13736,7 +13736,7 @@ wwv_flow_api.create_plugin(
 '    l_attribute01     p_dynamic_action.attribute_01%type := nvl(p_dynamic_action.attribute_01, ''class'');',
 '',
 'begin',
-'    ',
+'',
 '    --debug',
 '    if apex_application.g_debug ',
 '    then',
@@ -13745,38 +13745,39 @@ wwv_flow_api.create_plugin(
 '          , p_dynamic_action => p_dynamic_action',
 '          );',
 '    end if;',
-'    ',
+'',
 '    l_result.javascript_function := ''function() {''',
 '        ||''const closestHtml = $(this.triggeringElement).closest("html");''',
 '        ||''const pageId = closestHtml.closest(''''[class^="page"]'''').attr("class").split(/\s+/)?.filter(x => x.startsWith("page-"))?.[0]?.replace("page-", "");''',
 '        ||''const popupId = `#PopupLov_${pageId}_${this.triggeringElement.id}_dlg`;''',
 '        ||''const popupElement = $(top.parent.document).find(popupId);''',
 '        ||''''',
-'        ||''const waitForLoading = function(popupElement, callback) {if (popupElement.find("span.u-Processing").length === 0) {callback();} else {setTimeout(function() {waitForLoading(popupElement, callback);}, 250);}};''',
-'        ||''''',
-'        ||''function addValueAsClass() {''',
+'        ||''function setColors() {''',
 '        ||''    setTimeout(function() {''',
-'        ||''        waitForLoading(popupElement, function() {''',
-'        ||''            setTimeout(function() {''',
-'        ||''                popupElement.find("li.a-IconList-item").each(function () {''',
-'        ||''                    const _this = $(this);''',
-'        ||''                    if ("''||l_attribute01||''" === "class") {''',
-'        ||''                        _this.addClass(_this.data("id"));''',
-'        ||''                    } else {''',
-'        ||''                        _this.css("background-color", _this.data("id"));''',
-'        ||''                    }''',
-'        ||''                });''',
-'        ||''            }, 50);''',
+'        ||''        popupElement.find("li.a-IconList-item").each(function () {''',
+'        ||''            const _this = $(this);''',
+'        ||''            if ("''||l_attribute01||''" === "class") {''',
+'        ||''                _this.addClass(_this.data("id"));''',
+'        ||''            } else {''',
+'        ||''                _this.css("background-color", _this.data("id"));''',
+'        ||''            }''',
 '        ||''        });''',
 '        ||''    }, 150);''',
 '        ||''}''',
-'        ||''addValueAsClass();''',
+'        ||''setColors();''',
 '        ||''''',
-'        ||''popupElement.find(".a-GV-loadMoreButton").click(() => addValueAsClass());''',
+'        ||''popupElement.find(".a-PopupLOV-results").on("DOMNodeInserted", event => {''',
+'        ||''    if (event.target.nodeName != "LI")''',
+'        ||''        return;''',
+'        ||''    setColors();''',
+'        ||''});''',
+'        ||''''',
+'        ||''popupElement.find(".a-GV-loadMoreButton").click(() => setColors());''',
 '    ||''}'';',
 '',
 '    return l_result;',
-'end render;'))
+'end render;',
+''))
 ,p_api_version=>2
 ,p_render_function=>'render'
 ,p_standard_attributes=>'ITEM'
@@ -13797,7 +13798,7 @@ wwv_flow_api.create_plugin(
 '</ul>',
 '',
 'So each list item gets the corresponding style'))
-,p_version_identifier=>'0.5'
+,p_version_identifier=>'0.6'
 ,p_about_url=>'https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup'
 );
 wwv_flow_api.create_plugin_attribute(
@@ -13894,7 +13895,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'Y'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'JSTARK'
-,p_last_upd_yyyymmddhh24miss=>'20221109142042'
+,p_last_upd_yyyymmddhh24miss=>'20230102114005'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(64086857829097325)

@@ -28,7 +28,7 @@ prompt APPLICATION 501 - Plugin  - Colorful Inline Popup
 -- Application Export:
 --   Application:     501
 --   Name:            Plugin  - Colorful Inline Popup
---   Date and Time:   14:22 Wednesday November 9, 2022
+--   Date and Time:   15:22 Monday January 2, 2023
 --   Exported By:     JSTARK
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -67,7 +67,7 @@ wwv_flow_api.create_plugin(
 '    l_attribute01     p_dynamic_action.attribute_01%type := nvl(p_dynamic_action.attribute_01, ''class'');',
 '',
 'begin',
-'    ',
+'',
 '    --debug',
 '    if apex_application.g_debug ',
 '    then',
@@ -76,38 +76,39 @@ wwv_flow_api.create_plugin(
 '          , p_dynamic_action => p_dynamic_action',
 '          );',
 '    end if;',
-'    ',
+'',
 '    l_result.javascript_function := ''function() {''',
 '        ||''const closestHtml = $(this.triggeringElement).closest("html");''',
 '        ||''const pageId = closestHtml.closest(''''[class^="page"]'''').attr("class").split(/\s+/)?.filter(x => x.startsWith("page-"))?.[0]?.replace("page-", "");''',
 '        ||''const popupId = `#PopupLov_${pageId}_${this.triggeringElement.id}_dlg`;''',
 '        ||''const popupElement = $(top.parent.document).find(popupId);''',
 '        ||''''',
-'        ||''const waitForLoading = function(popupElement, callback) {if (popupElement.find("span.u-Processing").length === 0) {callback();} else {setTimeout(function() {waitForLoading(popupElement, callback);}, 250);}};''',
-'        ||''''',
-'        ||''function addValueAsClass() {''',
+'        ||''function setColors() {''',
 '        ||''    setTimeout(function() {''',
-'        ||''        waitForLoading(popupElement, function() {''',
-'        ||''            setTimeout(function() {''',
-'        ||''                popupElement.find("li.a-IconList-item").each(function () {''',
-'        ||''                    const _this = $(this);''',
-'        ||''                    if ("''||l_attribute01||''" === "class") {''',
-'        ||''                        _this.addClass(_this.data("id"));''',
-'        ||''                    } else {''',
-'        ||''                        _this.css("background-color", _this.data("id"));''',
-'        ||''                    }''',
-'        ||''                });''',
-'        ||''            }, 50);''',
+'        ||''        popupElement.find("li.a-IconList-item").each(function () {''',
+'        ||''            const _this = $(this);''',
+'        ||''            if ("''||l_attribute01||''" === "class") {''',
+'        ||''                _this.addClass(_this.data("id"));''',
+'        ||''            } else {''',
+'        ||''                _this.css("background-color", _this.data("id"));''',
+'        ||''            }''',
 '        ||''        });''',
 '        ||''    }, 150);''',
 '        ||''}''',
-'        ||''addValueAsClass();''',
+'        ||''setColors();''',
 '        ||''''',
-'        ||''popupElement.find(".a-GV-loadMoreButton").click(() => addValueAsClass());''',
+'        ||''popupElement.find(".a-PopupLOV-results").on("DOMNodeInserted", event => {''',
+'        ||''    if (event.target.nodeName != "LI")''',
+'        ||''        return;''',
+'        ||''    setColors();''',
+'        ||''});''',
+'        ||''''',
+'        ||''popupElement.find(".a-GV-loadMoreButton").click(() => setColors());''',
 '    ||''}'';',
 '',
 '    return l_result;',
-'end render;'))
+'end render;',
+''))
 ,p_api_version=>2
 ,p_render_function=>'render'
 ,p_standard_attributes=>'ITEM'
@@ -128,7 +129,7 @@ wwv_flow_api.create_plugin(
 '</ul>',
 '',
 'So each list item gets the corresponding style'))
-,p_version_identifier=>'0.5'
+,p_version_identifier=>'0.6'
 ,p_about_url=>'https://github.com/aerztliche-verrechnungsstelle-buedingen/apex-colorful-inline-popup'
 );
 wwv_flow_api.create_plugin_attribute(
